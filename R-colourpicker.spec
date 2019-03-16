@@ -4,7 +4,7 @@
 #
 Name     : R-colourpicker
 Version  : 1.0
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/colourpicker_1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/colourpicker_1.0.tar.gz
 Summary  : A Colour Picker Tool for Shiny and for Selecting Colours in
@@ -12,22 +12,21 @@ Group    : Development/Tools
 License  : MIT
 Requires: R-ggplot2
 Requires: R-htmlwidgets
+Requires: R-markdown
 Requires: R-miniUI
 Requires: R-shiny
 Requires: R-shinyjs
 BuildRequires : R-ggplot2
 BuildRequires : R-htmlwidgets
+BuildRequires : R-markdown
 BuildRequires : R-miniUI
 BuildRequires : R-shiny
 BuildRequires : R-shinyjs
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
-or Rmarkdown documents. The colour picker supports alpha opacity, custom
-    colour palettes, and many more options. A Plot Colour Helper tool is
-    available as an RStudio Addin, which helps you pick colours to use in your
-    plots. A more generic Colour Picker RStudio Addin is also provided to let 
-    you select colours to use in your R code.
+colourpicker - A Colour Picker Tool for Shiny and for Selecting Colours in Plots
+================================================================================
 
 %prep
 %setup -q -c -n colourpicker
@@ -37,11 +36,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523295587
+export SOURCE_DATE_EPOCH=1552729658
 
 %install
+export SOURCE_DATE_EPOCH=1552729658
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523295587
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -76,8 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library colourpicker|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  colourpicker || :
 
 
 %files
