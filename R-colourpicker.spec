@@ -4,7 +4,7 @@
 #
 Name     : R-colourpicker
 Version  : 1.0
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/colourpicker_1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/colourpicker_1.0.tar.gz
 Summary  : A Colour Picker Tool for Shiny and for Selecting Colours in
@@ -25,13 +25,11 @@ BuildRequires : R-miniUI
 BuildRequires : R-shiny
 BuildRequires : R-shinyjs
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
-or Rmarkdown documents. The colour picker supports alpha opacity, custom
-    colour palettes, and many more options. A Plot Colour Helper tool is
-    available as an RStudio Addin, which helps you pick colours to use in your
-    plots. A more generic Colour Picker RStudio Addin is also provided to let 
-    you select colours to use in your R code.
+colourpicker - A Colour Picker Tool for Shiny and for Selecting Colours in Plots
+================================================================================
 
 %prep
 %setup -q -c -n colourpicker
@@ -41,10 +39,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569285666
+export SOURCE_DATE_EPOCH=1571812086
 
 %install
-export SOURCE_DATE_EPOCH=1569285666
+export SOURCE_DATE_EPOCH=1571812086
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
