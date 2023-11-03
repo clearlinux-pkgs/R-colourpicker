@@ -5,7 +5,7 @@
 #
 Name     : R-colourpicker
 Version  : 1.3.0
-Release  : 51
+Release  : 52
 URL      : https://cran.r-project.org/src/contrib/colourpicker_1.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/colourpicker_1.3.0.tar.gz
 Summary  : A Colour Picker Tool for Shiny and for Selecting Colours in
